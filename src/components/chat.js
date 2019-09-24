@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 import { ReactComponent as HomeSvg } from '../svg/home.svg';
 import { ReactComponent as SendSvg } from '../svg/send.svg';
 
@@ -8,27 +10,30 @@ class Chat extends Component {
       }
 
     handleChange = (e) => {
-    this.setState({
-        'msg': e.target.value
-    })
-    console.log(e.target.value);
+        this.setState({
+            'msg': e.target.value
+        })
+        console.log(e.target.value);
     }
 
     handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state);
+        e.preventDefault();
+        console.log(this.state);
+        this.setState({
+            msg: ''
+        })
     }
 
     scrollToBottom = () => {
-    this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
     }
     
     componentDidMount() {
-    this.scrollToBottom();
+        this.scrollToBottom();
     }
     
     componentDidUpdate() {
-    this.scrollToBottom();
+        this.scrollToBottom();
     }
     render() {
         return (
@@ -42,7 +47,7 @@ class Chat extends Component {
                         <span className="online">4 aktiva användare</span>
                     </div>
                 </div>
-                <div className="chat-body">
+                <SimpleBar className="chat-body">
                     <ul>
                         <li className="chat-me">
                             <p>Hej, testa gärna min chatt</p>
@@ -94,10 +99,10 @@ class Chat extends Component {
                         </li>
                     </ul>
                     <div style={{ float:"left", clear: "both" }} ref={(el) => { this.messagesEnd = el; }}></div>
-                </div>
+                </SimpleBar>
                 <div className="chat-footer">
                     <form onSubmit={this.handleSubmit} autoComplete="off">
-                        <input onChange={this.handleChange} type="text" placeholder="Skriv något..." name="msg"/>
+                        <input onChange={this.handleChange} value={this.state.msg} type="text" placeholder="Skriv något..." name="msg"/>
                         <button><SendSvg/></button>
                     </form>
                 </div>

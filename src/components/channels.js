@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 import { ReactComponent as HomeSvg } from '../svg/home.svg';
 
 class Channels extends Component {
@@ -11,7 +13,7 @@ class Channels extends Component {
                         <input onChange={this.handleChange} type="text" placeholder="Skriv ditt namn..." name="name"/>
                     </form>
                 </div>
-                <div className="channels-body">
+                <SimpleBar className="channels-body">
                     <div className="channels-single">
                         <div className="icon">
                             <HomeSvg/>
@@ -39,7 +41,25 @@ class Channels extends Component {
                             <span className="desc">Just about anything</span>
                         </div>
                     </div>
-                </div>
+                    <div className="channels-single">
+                        <div className="icon">
+                            <HomeSvg/>
+                        </div>
+                        <div className="info">
+                            <span className="title">#general</span>
+                            <span className="desc">Just about anything</span>
+                        </div>
+                    </div>
+                    <div className="channels-single">
+                        <div className="icon">
+                            <HomeSvg/>
+                        </div>
+                        <div className="info">
+                            <span className="title">#general</span>
+                            <span className="desc">Just about anything</span>
+                        </div>
+                    </div>
+                </SimpleBar>
             </div>
         )
     }
