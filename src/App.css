@@ -127,12 +127,13 @@ body {
 
 .chat-wrapper .chat-body ul li.chat-me small {
   text-align: right;
-  color: rgba(255, 255, 255, 0.7);
+  color: #e2e2e2;
 }
 
 /* Chat Footer */
 .chat-wrapper .chat-footer form {
   display: flex;
+  margin-top: .5rem;
 }
 
 .chat-wrapper .chat-footer form input {
@@ -180,7 +181,7 @@ body {
   border: none;
   padding: 1rem;
   background-color: #F2F2F2;
-  margin: 1rem 0;
+  margin: 1rem 0 0;
   border-radius: 5px;
   outline: none;
 }
@@ -202,6 +203,10 @@ body {
   padding: 1.5rem;
   padding-left: 0;
   border-bottom: 1px solid #DDDDDD;
+}
+
+.channels-wrapper .channels-body .channels-single:last-of-type {
+  border-bottom: transparent;
 }
 
 .channels-wrapper .channels-body .icon {
@@ -240,5 +245,23 @@ body {
     flex-direction: column;
     height: 100%;;
     background-image: none;
+  }
+  
+  .channels-wrapper {
+    max-height: unset;
+    height: 100vh;
+  }
+  
+  .channels-wrapper .channels-body {
+    max-height: 80%;
+  }
+  
+  .chat-wrapper {
+    max-height: unset;
+    height: 100vh;
+  }
+
+  .chat-wrapper .chat-body {
+    max-height: 80%;
   }
 }

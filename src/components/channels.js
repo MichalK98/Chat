@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
-import { ReactComponent as HomeSvg } from '../svg/home.svg';
+import Channel from './channel.js';
 
 class Channels extends Component {
     render() {
@@ -14,51 +14,12 @@ class Channels extends Component {
                     </form>
                 </div>
                 <SimpleBar className="channels-body">
-                    <div className="channels-single">
-                        <div className="icon">
-                            <HomeSvg/>
-                        </div>
-                        <div className="info">
-                            <span className="title">#general</span>
-                            <span className="desc">Just about anything</span>
-                        </div>
-                    </div>
-                    <div className="channels-single">
-                        <div className="icon">
-                            <HomeSvg/>
-                        </div>
-                        <div className="info">
-                            <span className="title">#general</span>
-                            <span className="desc">Just about anything</span>
-                        </div>
-                    </div>
-                    <div className="channels-single">
-                        <div className="icon">
-                            <HomeSvg/>
-                        </div>
-                        <div className="info">
-                            <span className="title">#general</span>
-                            <span className="desc">Just about anything</span>
-                        </div>
-                    </div>
-                    <div className="channels-single">
-                        <div className="icon">
-                            <HomeSvg/>
-                        </div>
-                        <div className="info">
-                            <span className="title">#general</span>
-                            <span className="desc">Just about anything</span>
-                        </div>
-                    </div>
-                    <div className="channels-single">
-                        <div className="icon">
-                            <HomeSvg/>
-                        </div>
-                        <div className="info">
-                            <span className="title">#general</span>
-                            <span className="desc">Just about anything</span>
-                        </div>
-                    </div>
+                    <Channel/>
+                    <Channel/>
+                    <Channel/>
+                    <Channel/>
+                    <Channel/>
+                    <Channel/>
                 </SimpleBar>
             </div>
         )
