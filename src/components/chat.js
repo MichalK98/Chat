@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
-import { ReactComponent as HomeSvg } from '../svg/home.svg';
-import { ReactComponent as SendSvg } from '../svg/send.svg';
+import HomeSvg from '../svg/home.svg';
+import SendSvg from '../svg/send.svg';
 
 class Chat extends Component {
     state = {
         msg: ''
-      }
+    }
 
     handleChange = (e) => {
         this.setState({

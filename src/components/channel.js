@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ReactComponent as HomeSvg } from '../svg/home.svg';
+import HomeSvg from '../svg/home.svg';
 
 class Channel extends Component {
     render() {

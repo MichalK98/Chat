@@ -13,7 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('./img/bg.jpg');
+  background-image: url('/img/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -29,6 +29,7 @@ body {
   width: 100%;
   background-color: #F2F2F2;
   border-radius: 5px;
+  height: 100%;
 }
 
 
@@ -47,12 +48,12 @@ body {
   border-radius: 16px;
   width: 50px;
   height: 50px;
+  display: flex;
 }
 
 .chat-wrapper .chat-header .icon svg{
   display: block;
   margin: auto;
-  height: 100%;
 }
 
 .chat-wrapper .chat-header .info {
@@ -85,7 +86,7 @@ body {
 /* Chat Body */
 .chat-wrapper .chat-body {
   flex: 1;
-  max-height: 400px;
+  height: 100%;
   padding: 0 10px;
 }
 
@@ -160,7 +161,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #FFF;
 }
 
@@ -193,9 +194,9 @@ body {
 /* Channels Body */
 .channels-wrapper .channels-body {
   display: flex;
+  height: 100%;
   flex-direction: column;
   padding: 10px;
-  max-height: 400px;
 }
 
 .channels-wrapper .channels-body .channels-single {
@@ -215,12 +216,12 @@ body {
   border-radius: 16px;
   width: 50px;
   height: 50px;
+  display: flex;
 }
 
 .channels-wrapper .channels-body .icon svg{
   display: block;
   margin: auto;
-  height: 100%;
 }
 
 .channels-wrapper .channels-body .info {
