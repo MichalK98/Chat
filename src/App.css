@@ -1,22 +1,229 @@
+/* Root */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0; 
+  font-family: Roboto;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* -------------------------------------- */
+/* Chat */
+.chat-wrapper {
+  max-width: 480px;
+  max-height: 600px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  background-color: #F2F2F2;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #09d3ac;
+
+/* Chat Header */
+.chat-wrapper .chat-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #DDDDDD;
+  padding-bottom: 1.5rem;
+}
+
+.chat-wrapper .chat-header .icon {
+  background-color: #B585F2;
+  box-shadow: 0px 2px 16px #B585F2;
+  border-radius: 16px;
+  width: 50px;
+  height: 50px;
+}
+
+.chat-wrapper .chat-header .icon svg{
+  display: block;
+  margin: auto;
+  height: 100%;
+}
+
+.chat-wrapper .chat-header .info {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+}
+
+.chat-wrapper .chat-header .info .title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  
+}
+
+.chat-wrapper .chat-header .info .online {
+  color: #888888;
+}
+
+.chat-wrapper .chat-header .info .online::before {
+  display: inline-block;
+  content: "";
+  background-color: #45DB81;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-right: .5rem;
+}
+
+/* Chat Body */
+.chat-wrapper .chat-body {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.chat-wrapper .chat-body ul {
+  display: flex;
+  flex-direction: column-reverse;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chat-wrapper .chat-body ul li {
+  align-self: flex-start;
+  background-color: #FFF;
+  color: #000;
+  border-radius: 2px 10px 10px 10px;
+  padding: .5rem 1.5rem;
+  margin: .5rem 0;
+}
+
+.chat-wrapper .chat-body ul li p {
+  margin: .5rem 0;
+}
+
+.chat-wrapper .chat-body ul li small {
+  color: #535353;
+  display: block;
+  margin: .5rem 0;
+}
+
+
+.chat-wrapper .chat-body ul li.chat-me {
+  align-self: flex-end;
+  background-color: #B585F2;
+  color: #FFF;
+  border-radius: 10px 2px 10px 10px;
+}
+
+.chat-wrapper .chat-body ul li.chat-me small {
+  text-align: right;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Chat Footer */
+.chat-wrapper .chat-footer form {
+  display: flex;
+}
+
+.chat-wrapper .chat-footer form input {
+  flex: 1;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.chat-wrapper .chat-footer form button {
+  background-color: #FFF;
+  border: none;
+  cursor: pointer;
+  border-radius: 0px 5px 5px 0px;
+}
+
+/* -------------------------------------- */
+/* Channels */
+.channels-wrapper {
+  max-width: 480px;
+  max-height: 600px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: #FFF;
+}
+
+/* Header */
+.channels-wrapper .channels-header h1 {
+  font-size: 2.7rem;
+  font-weight: 500;
+  margin: 0;;
+}
+
+
+.channels-wrapper .channels-header form {
+  display: flex;
+}
+
+.channels-wrapper .channels-header form input {
+  flex: 1;
+  border: none;
+  padding: 1rem;
+  background-color: #F2F2F2;
+  margin: 1rem 0;
+  border-radius: 5px;
+}
+
+.channels-wrapper .channels-header form input::placeholder {
+  color: #000;
+}
+
+/* Channels Body */
+.channels-wrapper .channels-body {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow: visible;
+}
+
+.channels-wrapper .channels-body .channels-single {
+  display: flex;
+  padding: 1.5rem;
+  padding-left: 0;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.channels-wrapper .channels-body .icon {
+  background-color: #B585F2;
+  box-shadow: 0px 2px 16px #B585F2;
+  border-radius: 16px;
+  width: 50px;
+  height: 50px;
+}
+
+.channels-wrapper .channels-body .icon svg{
+  display: block;
+  margin: auto;
+  height: 100%;
+}
+
+.channels-wrapper .channels-body .info {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+}
+
+.channels-wrapper .channels-body .info .title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.channels-wrapper .channels-body .info .desc {
+  color: #888888;
+
 }

@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
+import Chat from './components/chat.js';
+import Channels from './components/channels.js';
 
 function App() {
   return (
     <div className="App">
-      <h1>Chat</h1>
+      <Channels/>
+      <Chat/>
     </div>
   );
 }
