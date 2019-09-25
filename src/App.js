@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Chat from './components/chat.js';
-import Channels from './components/channels.js';
+import Chat from './components/Chat';
+import Channels from './components/channels';
 
 function App() {
   return (

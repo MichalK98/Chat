@@ -18,7 +18,14 @@ const io = require('socket.io')(server);
 
 io.on('connection', (socket) => {
     console.log('New user connected!');
+
+    socket.on('new_message', (data) => {
+        io.sockets.emit('new_message', {msg : data.message});
+        console.log(data.message);
+    });
 });
+
+
 
 // --------------------- //
 console.log("");
