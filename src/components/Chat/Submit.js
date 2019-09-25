@@ -1,46 +1,38 @@
 import React, { Component } from 'react';
-import socketIOClient from "socket.io-client";
 import SendSvg from '../../svg/send.svg';
+import socket from '../../ws';
 
 class Submit extends Component {
-    constructor() {
-        super();
-        this.state = {
-            endpoint: 'http://localhost:9090'
-        }
-    }
-
     state = {
-        msg: ''
+        message: ''
     }
-
-    //Connect socket
-    socket = socketIOClient(this.state.endpoint);
 
     clear = async () => {
         await this.setState({
-            msg: ''
+            message: ''
         });
     }
 
     handleChange = (e) => {
         this.setState({
-            'msg': e.target.value
+            'message': e.target.value
         })
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
+
+        console.log("emit", socket);
         
         //Emit message
-        this.socket.emit('new_message', {message : this.state.msg});
+        socket.emit('new_message', {message : this.state.message});
         this.clear();
     }
 
     render() {
         return(
             <form onSubmit={this.handleSubmit} autoComplete="off">
-                <input onChange={this.handleChange} value={this.state.msg} type="text" placeholder="Skriv något..." name="msg" id="msg"/>
+                <input onChange={this.handleChange} value={this.state.message} type="text" placeholder="Skriv något..."/>
                 <button id="btnSend"><SendSvg/></button>
             </form>
         )
