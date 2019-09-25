@@ -21,7 +21,7 @@ class Chat extends Component {
         console.log(this.state);
         this.setState({
             msg: ''
-        })
+        });
     }
 
     scrollToBottom = () => {
