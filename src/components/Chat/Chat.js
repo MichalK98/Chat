@@ -9,11 +9,19 @@ class Chat extends Component {
 
     constructor() {
         socket.on("new_message", (data) => {
+            console.log(data)
             // push new message to array that exists in state
             this.setState({
                 messages: [...this.state.messages, data]
             });
-        })
+        });
+        socket.on("message", (data) => {
+            console.log(data)
+            // push new message to array that exists in state
+            this.setState({
+                messages: [...this.state.messages, data]
+            });
+        });
         super();
     }
 
@@ -33,6 +41,7 @@ class Chat extends Component {
     componentDidUpdate() {
         this.scrollToBottom();
     }
+
     render() {
         return (
             <div className="chat-wrapper" id="chat-wrapper">
@@ -48,19 +57,23 @@ class Chat extends Component {
                 </div>
                 <SimpleBar className="chat-body">
                     <ul id="chatroom">
-                        {this.state.messages.reverse().map((msg) => (
-                            <li className="chat-me" key={Math.random()}>
+
+                        {this.state.messages.map((msg, i) => (
+                            <li className={(msg.username == 'you' ? "chat-me" : "")} key={i}>
                                 <p>{msg.message}</p>
                                 <small>{msg.username}</small>
                             </li>
-                        ))}
-                        <li className="chat-me">
-                            <p>Hej, testa gärna min chatt</p>
-                            <small>Michal</small>
-                        </li>
+                        )).reverse()}
+                        
+
+
                         <li>
                             <p>Testing, testing... Lorem ipsum dolar sit amet</p>
                             <small>Mattial</small>
+                        </li>
+                        <li className="chat-me">
+                            <p>Hej, testa gärna min chatt</p>
+                            <small>Michal</small>
                         </li>
                     </ul>
                     <div style={{ float:"left", clear: "both" }} ref={(el) => { this.messagesEnd = el; }}></div>

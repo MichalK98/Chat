@@ -4,7 +4,8 @@ import socket from '../../ws';
 
 class Submit extends Component {
     state = {
-        message: ''
+        message: '',
+        username: ''
     }
 
     clear = async () => {
@@ -21,10 +22,10 @@ class Submit extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-
+        socket.emit('message', {message : this.state.message, username: 'you'});
         //Emit message
         if(this.state.message.length >= 1) {
-            socket.emit('new_message', {message : this.state.message});
+            socket.emit('new_message', {message : this.state.message, username: 'alien'});
             this.clear();
         }
     }
