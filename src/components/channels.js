@@ -7,9 +7,12 @@ import User from './Chat/User';
 class Channels extends Component {
     render() {
         return (
-            <div className="channels-wrapper">
+            <div className="channels-wrapper" id="channels-wrapper">
                 <div className="channels-header">
-                    <h1>Chat.app</h1>
+                    <div className="info">
+                        <h1>Chat.app</h1>
+                        <a href="#chat-wrapper" className="btn-mobile">#</a>
+                    </div>
                     <User/>
                 </div>
                 <SimpleBar className="channels-body">

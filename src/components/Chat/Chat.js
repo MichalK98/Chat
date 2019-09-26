@@ -35,7 +35,7 @@ class Chat extends Component {
     }
     render() {
         return (
-            <div className="chat-wrapper">
+            <div className="chat-wrapper" id="chat-wrapper">
                 <div className="chat-header">
                     <div className="icon">
                         <HomeSvg/>
@@ -44,6 +44,7 @@ class Chat extends Component {
                         <span className="title">#general</span>
                         <span className="online">4 aktiva användare</span>
                     </div>
+                    <a href="#channels-wrapper" className="btn-mobile">#</a>
                 </div>
                 <SimpleBar className="chat-body">
                     <ul id="chatroom">
