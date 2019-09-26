@@ -23,8 +23,10 @@ class Submit extends Component {
         e.preventDefault();
 
         //Emit message
-        socket.emit('new_message', {message : this.state.message});
-        this.clear();
+        if(this.state.message.length >= 1) {
+            socket.emit('new_message', {message : this.state.message});
+            this.clear();
+        }
     }
 
     render() {
