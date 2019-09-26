@@ -5,18 +5,14 @@ import HomeSvg from '../../svg/home.svg';
 import Submit from "./Submit";
 import socket from "../../ws";
 
-const msgList = [];
-
 class Chat extends Component {
 
     constructor() {
         socket.on("new_message", (data) => {
             // push new message to array that exists in state
-            console.log("Before push, ", this.state);
             this.setState({
                 messages: [...this.state.messages, data]
             });
-            console.log("After push, ", this.state);
         })
         super();
     }
@@ -52,7 +48,7 @@ class Chat extends Component {
                 <SimpleBar className="chat-body">
                     <ul id="chatroom">
                         {this.state.messages.reverse().map((msg) => (
-                            <li className="chat-me">
+                            <li className="chat-me" key={Math.random()}>
                                 <p>{msg.message}</p>
                                 <small>{msg.username}</small>
                             </li>

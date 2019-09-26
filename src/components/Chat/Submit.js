@@ -22,8 +22,6 @@ class Submit extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log("emit", socket);
-        
         //Emit message
         socket.emit('new_message', {message : this.state.message});
         this.clear();
