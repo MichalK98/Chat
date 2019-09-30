@@ -19,9 +19,14 @@
   },
   "dependencies": {
     "compression": "^1.7.4",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4"
   },
   "nodemonConfig": {
-    "ignore": ["dist/*", "src/*"]
+    "ignore": [
+      "dist/*",
+      "src/*"
+    ]
   }
 }
