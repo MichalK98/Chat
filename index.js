@@ -24,7 +24,6 @@ io.on('connection', (socket) => {
     });
 
     socket.on('new_message', (data) => {
-        // io.sockets.emit('new_message', {message : data.message, username : this.username});
         socket.broadcast.emit('new_message', {message : data.message, username : data.username});
         console.log("boardcast", data)
     });

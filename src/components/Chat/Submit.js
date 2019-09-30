@@ -22,7 +22,7 @@ class Submit extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        socket.emit('message', {message : this.state.message, username: 'you'});
+        socket.emit('message', {message : this.state.message, username: 'You'});
         //Emit message
         if(this.state.message.length >= 1) {
             socket.emit('new_message', {message : this.state.message, username: 'alien'});

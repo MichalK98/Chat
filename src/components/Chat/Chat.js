@@ -57,16 +57,12 @@ class Chat extends Component {
                 </div>
                 <SimpleBar className="chat-body">
                     <ul id="chatroom">
-
                         {this.state.messages.map((msg, i) => (
-                            <li className={(msg.username == 'you' ? "chat-me" : "")} key={i}>
+                            <li className={(msg.username == 'You' ? "chat-me" : "")} key={i}>
                                 <p>{msg.message}</p>
                                 <small>{msg.username}</small>
                             </li>
                         )).reverse()}
-                        
-
-
                         <li>
                             <p>Testing, testing... Lorem ipsum dolar sit amet</p>
                             <small>Mattial</small>
