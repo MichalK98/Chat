@@ -3,33 +3,10 @@ import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
 import HomeSvg from '../../svg/home.svg';
 import Submit from "./Submit";
-import socket from "../../ws";
+import Message from "./Message";
 
 class Chat extends Component {
 
-    constructor() {
-        socket.on("new_message", (data) => {
-            console.log(data)
-            // push new message to array that exists in state
-            this.setState({
-                messages: [...this.state.messages, data]
-            });
-        });
-        socket.on("message", (data) => {
-            console.log(data)
-            // push new message to array that exists in state
-            this.setState({
-                messages: [...this.state.messages, data]
-            });
-        });
-        super();
-    }
-
-    state = {
-        messages: []
-    }
-
-    
     scrollToBottom = () => {
         this.messagesEnd.scrollIntoView({ behavior: "smooth" });
     }
@@ -55,25 +32,14 @@ class Chat extends Component {
                     </div>
                     <a href="#channels-wrapper" className="btn-mobile">#</a>
                 </div>
+                
+                
                 <SimpleBar className="chat-body">
-                    <ul id="chatroom">
-                        {this.state.messages.map((msg, i) => (
-                            <li className={(msg.username == 'You' ? "chat-me" : "")} key={i}>
-                                <p>{msg.message}</p>
-                                <small>{msg.username}</small>
-                            </li>
-                        )).reverse()}
-                        <li>
-                            <p>Testing, testing... Lorem ipsum dolar sit amet</p>
-                            <small>Mattial</small>
-                        </li>
-                        <li className="chat-me">
-                            <p>Hej, testa gärna min chatt</p>
-                            <small>Michal</small>
-                        </li>
-                    </ul>
+                    <Message/>
                     <div style={{ float:"left", clear: "both" }} ref={(el) => { this.messagesEnd = el; }}></div>
                 </SimpleBar>
+                
+                
                 <div className="chat-footer">
                     <Submit/>
                 </div>

@@ -22,6 +22,10 @@ class Channels extends Component {
                     <Channel/>
                     <Channel/>
                     <Channel/>
+                    <Channel/>
+                    <Channel/>
+                    <Channel/>
+                    <Channel/>
                 </SimpleBar>
             </div>
         )
